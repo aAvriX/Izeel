@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/Parker.png" type="image/x-icon">
+    <title>Izeel<3</title>
+</head>
+<body>
+    <div class="greetings pregunta">
+        <span>¿</span>
+        <span>Q</span>
+        <span>U</span>
+        <span>I</span>
+        <span>E</span>
+        <span>R</span>
+        <span>E</span>
+        <span>S</span>
+        &nbsp;
+        <span>S</span>
+        <span>E</span>
+        <span>R</span>
+        &nbsp;
+        <span>M</span>
+        <span>I</span>
+        &nbsp;
+        <span>N</span>
+        <span>O</span>
+        <span>V</span>
+        <span>I</span>
+        <span>A</span>
+        <span>?</span>
+    </div>
+    <div class="description">
+        <span>Piénsalo bien, guapota... con el alma te lo pregunto</span>
+    </div>
+    <div class="button botones-container">
+        <button id="btnSi">
+            <a href="FLORES.html">Sí<3</a>
+        </button>
+        <button id="btnNo">No</button>
+    </div>
+
+    <script>
+        const btnNo = document.getElementById("btnNo");
+        const frasesNo = [
+            "No",
+            "¿Segura?",
+            "Piénsalo de nuevo",
+            "Inténtalo otra vez",
+            "No creo que quieras eso",
+            "Vuelve a intentarlo",
+            "Nooo jajaja",
+            "¡Casi! pero no",
+            "Ese botón no funciona así"
+        ];
+
+        function moverBoton() {
+            const margen = 20;
+            const maxX = window.innerWidth - btnNo.offsetWidth - margen;
+            const maxY = window.innerHeight - btnNo.offsetHeight - margen;
+
+            const nuevoX = Math.random() * maxX;
+            const nuevoY = Math.random() * maxY;
+
+            btnNo.style.position = "fixed";
+            btnNo.style.left = nuevoX + "px";
+            btnNo.style.top = nuevoY + "px";
+
+            const frase = frasesNo[Math.floor(Math.random() * frasesNo.length)];
+            btnNo.textContent = frase;
+        }
+
+        // Se mueve al pasar el mouse encima (para que ni siquiera lo puedan clickear)
+        btnNo.addEventListener("mouseover", moverBoton);
+        // Por si acaso lo logran tocar en móvil, también se mueve al click
+        btnNo.addEventListener("click", (e) => {
+            e.preventDefault();
+            moverBoton();
+        });
+        // Y también al tocarlo en pantallas táctiles
+        btnNo.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            moverBoton();
+        });
+    </script>
+</body>
+</html>

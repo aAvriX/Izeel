@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body{
+    color: azure;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-x: hidden;
+}
+.greetings{
+    font-size: clamp(1.8rem, 8vw, 6rem);
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
+    }
+    10%, 90%{
+        color: #696565;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        font-weight: 700;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button a{
+        font-size: .5rem;
+    }
+}
+
+.description{
+    color: #fbff00;
+}
+
+.botones-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnNo{
+    transition: left 0.2s ease-out, top 0.2s ease-out;
+    z-index: 10;
+}
+
+/* Estilo para el botón */
+.button button {
+    background-color: yellow; /* Fondo amarillo */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Ajusta el relleno según tu preferencia */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer;
+    position: relative; /* Necesario para el resplandor */
+    border-radius: 20px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
+  }
+  
+  /* Estilo para el enlace dentro del botón */
+  .button button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del botón */
+  }
+  
+  /* Efecto de resplandor al pasar el cursor sobre el botón */
+  .button button:hover {
+    background-color: orange; /* Cambia el color de fondo al pasar el mouse a naranja */
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Efecto de resplandor amarillo */
+  }
+  
+
+/* Tablets grandes o pantallas medianas */
+@media screen and (max-width: 1200px){
+    .description{
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablets pequeñas */
+@media screen and (max-width: 992px){
+    .description{
+        font-size: 1.2rem;
+    }
+}
+
+/* Celulares grandes */
+@media screen and (max-width: 768px){
+    .description{
+        font-size: 1rem;
+    }
+    .button button{
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+    .botones-container{
+        flex-wrap: wrap;
+    }
+}
+
+/* Celulares pequeños */
+@media screen and (max-width: 574px){
+    .description{
+        font-size: 0.9rem;
+    }
+    .button button{
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .description{
+        font-size: 0.8rem;
+    }
+    .button button{
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+}
